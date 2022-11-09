@@ -16,10 +16,10 @@ app.config.from_object(Config)
 api = Api(app)
 scheduler = APScheduler()
 
-# Add cron job to be executed on every 15 minutes
+# Add cron job to be executed on every hour
 
 scheduler.add_job(
-    func=get_current_data, trigger="cron", minute="*/15", id="get_current_data"
+    func=get_current_data, trigger="cron", hour="*/1", id="get_current_data"
 )
 
 # Add cron job to be executed on every hour

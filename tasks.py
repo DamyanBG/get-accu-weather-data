@@ -19,7 +19,6 @@ def get_current_data():
 def take_predition_data():
     r = requests.get(f"{GET_PREDICTION_DATA_URL}&apikey={API_KEY}")
     resp_json = r.json()
-    print(resp_json)
     for predict in resp_json:
         temperature = predict["Temperature"]["Value"]
         prediction_for = predict["DateTime"].split("+")[0]
